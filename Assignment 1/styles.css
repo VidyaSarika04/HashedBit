@@ -1,0 +1,144 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background-color: #f9f9f9; /* Light grayish background */
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #6ab04c; /* Soft green header */
+    color: white;
+    padding: 15px 30px;
+}
+
+header .logo img {
+    height: 60px;
+}
+
+header .social-links a {
+    margin-left: 15px;
+}
+
+header .social-links img {
+    height: 25px;
+}
+
+.menubar {
+    background-color: #3498db; /* Deep blue menubar */
+    padding: 15px 0;
+}
+
+.menubar ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+.menubar ul li {
+    margin: 0 20px;
+}
+
+.menubar ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    display: block;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.menubar ul li a:hover {
+    background-color: #2980b9; /* Darker blue on hover */
+    color: #fff; /* White text on hover */
+}
+
+.container {
+    display: flex;
+    padding: 30px;
+}
+
+.sidebar {
+    width: 25%;
+    background-color: #f1f1f1; /* Light grayish sidebar */
+    padding: 20px;
+    border-radius: 10px;
+    margin-right: 30px;
+}
+
+.sidebar h2 {
+    margin-bottom: 15px;
+    color: #6ab04c; /* Green heading for sidebar */
+}
+
+.sidebar p {
+    margin-bottom: 20px;
+    color: #555;
+}
+
+.sidebar form input[type="email"] {
+    width: calc(100% - 24px);
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.sidebar form button {
+    width: 100%;
+    padding: 12px;
+    background-color: #6ab04c; /* Green button */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.sidebar form button:hover {
+    background-color: #5c9842; /* Darker green on hover */
+}
+
+main {
+    width: 75%;
+    padding: 20px;
+}
+
+.content-box {
+    background-color: #fff; /* White content box */
+    padding: 25px;
+    margin-bottom: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+.content-box h2 {
+    margin-bottom: 15px;
+    color: #6ab04c; /* Green heading for content box */
+}
+
+.content-box img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.content-box p {
+    color: #555;
+}
+
+footer {
+    background-color: #6ab04c; /* Green footer */
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}

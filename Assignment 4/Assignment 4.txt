@@ -1,0 +1,175 @@
+Assignment 4
+Q1
+
+function swapTheme() {
+        var app = document.getElementById('app');
+        var button = document.getElementById('swap');
+
+        if (app.classList.contains('day')) {
+            app.classList.remove('day');
+            app.classList.add('night');
+            button.classList.remove('button_day');
+            button.classList.add('button_night');
+        } else {
+            app.classList.remove('night');
+            app.classList.add('day');
+            button.classList.remove('button_night');
+            button.classList.add('button_day');
+        }
+    }
+
+Q2
+
+
+function createDiv(width, height, text) {
+ 
+    var newDiv = document.createElement("div");
+
+    newDiv.style.width = width + "px";
+    newDiv.style.height = height + "px";
+
+    newDiv.textContent = text;
+
+    var container = document.getElementById("container");
+
+    
+    container.appendChild(newDiv);
+}
+createDiv(300, 200, "Good Morning!");
+
+Window.createDiv = createDiv;
+
+q3
+
+
+function toggleVisibility() {
+    var paragraph = document.getElementById("useless-paragraph");
+    
+   
+    if (paragraph.style.display === "none" || paragraph.style.display === "") {
+        
+        paragraph.style.display = "block";
+    } else {
+       
+        paragraph.style.display = "none";
+    }
+}
+
+
+q.
+html
+
+
+
+
+<!-- html code goes here -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Styler</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class='text-here' id='text-container'>This is some example text</div>
+    
+    <input type="text" id="colorbox">
+    <button id="colorchange">Change Colour</button>
+
+    <br><br>
+
+    <input type="range" id="fontsize" min="10" max="100" value="55">
+    
+    <br><br>
+
+    <button id="italic" class="stylebt">Italics</button>
+    <button id="underline" class="stylebt">Underline</button>
+    <button id="bold" class="stylebt">Bold</button>
+
+    <br><br>
+
+    <select id="list">
+        <option value="serif">Serif</option>
+        <option value="sans-serif">Sans-Serif</option>
+        <option value="monospace">Monospace</option>
+        <option value="cursive">Cursive</option>
+        <option value="fantasy">Fantasy</option>
+    </select>
+
+    <br><br>
+
+    <button id="getstyle">Get CSS</button>
+
+    <br><br>
+    <p id="css-props"></p>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+css
+
+.text-here {
+    font-size: 55px;
+    font-family: sans-serif;
+    color: black;
+    text-decoration: none;
+    font-style: normal;
+    font-weight: normal;
+    line-height: normal;
+    text-align: left;
+    letter-spacing: normal;
+    word-spacing: normal;
+}
+.stylebt {
+    margin: 5px;
+}
+
+js
+
+// javascript code goes here
+document.getElementById('colorchange').addEventListener('click', () => {
+    const color = document.getElementById('colorbox').value;
+    document.getElementById('text-container').style.color = color;
+});
+
+document.getElementById('fontsize').addEventListener('input', () => {
+    const size = document.getElementById('fontsize').value;
+    document.getElementById('text-container').style.fontSize = `${size}px`;
+});
+
+document.getElementById('underline').addEventListener('click', () => {
+    const textContainer = document.getElementById('text-container');
+    textContainer.style.textDecoration = textContainer.style.textDecoration === 'underline' ? 'none' : 'underline';
+});
+
+document.getElementById('italic').addEventListener('click', () => {
+    const textContainer = document.getElementById('text-container');
+    textContainer.style.fontStyle = textContainer.style.fontStyle === 'italic' ? 'normal' : 'italic';
+});
+
+document.getElementById('bold').addEventListener('click', () => {
+    const textContainer = document.getElementById('text-container');
+    textContainer.style.fontWeight = textContainer.style.fontWeight === 'bold' ? 'normal' : 'bold';
+});
+
+document.getElementById('list').addEventListener('change', () => {
+    const font = document.getElementById('list').value;
+    document.getElementById('text-container').style.fontFamily = font;
+});
+
+document.getElementById('getstyle').addEventListener('click', () => {
+    const textContainer = document.getElementById('text-container');
+    const styles = window.getComputedStyle(textContainer);
+    const cssProps = `
+        color: ${styles.color}; 
+        font-size: ${styles.fontSize}; 
+        font-family: ${styles.fontFamily}; 
+        text-decoration: ${styles.textDecoration}; 
+        font-style: ${styles.fontStyle}; 
+        font-weight: ${styles.fontWeight};
+    `;
+    document.getElementById('css-props').textContent = cssProps.replace(/\s\s+/g, ' ');
+});
+

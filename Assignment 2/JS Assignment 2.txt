@@ -1,0 +1,83 @@
+Q1
+for (let i = 2; i <= 100; i += 2) {
+    console.log(i);
+}
+
+Q2
+function calculate(operation, num1, num2) {
+    switch (operation) {
+        case 'add':
+            return num1 + num2;
+        case 'subtract':
+            return num1 - num2;
+        case 'multiply':
+            return num1 * num2;
+        case 'divide':
+            if (num2 === 0) {
+                return 'Cannot divide by zero';
+            }
+            return num1 / num2;
+        default:
+            return 'Invalid operation';
+    }
+}
+
+console.log(calculate('add', 32, 2));        
+console.log(calculate('subtract', 32, 4));   
+console.log(calculate('multiply', 32, 4));   
+console.log(calculate('divide', 32, 4));     
+console.log(calculate('divide', 32, 0));     
+
+Q3
+function findTax(salary) {
+    let taxRate;
+    switch (true) {
+        case (salary > 0 && salary <= 500000):
+            taxRate = 0;
+            break;
+        case (salary > 500000 && salary <= 1000000):
+            taxRate = 0.10;
+            break;
+        case (salary > 1000000 && salary <= 1500000):
+            taxRate = 0.20;
+            break;
+        case (salary > 1500000):
+            taxRate = 0.30;
+            break;
+        default:
+            return 'Invalid salary';
+    }
+    return salary * taxRate;
+}
+
+console.log(findTax(300000));    
+console.log(findTax(750000));    
+console.log(findTax(1250000));   
+console.log(findTax(2000000));   
+console.log(findTax(-55000));    
+
+Q4
+function sumOfProducts(n1, n2) {
+
+    let str1 = n1.toString();
+    let str2 = n2.toString();
+    
+    str1 = str1.split('').reverse().join('');
+    str2 = str2.split('').reverse().join('');
+ 
+    let sum = 0;
+
+    for (let i = 0; i < Math.max(str1.length, str2.length); i++) {
+      let digit1 = i < str1.length ? parseInt(str1[i]) : 0;
+      let digit2 = i < str2.length ? parseInt(str2[i]) : 0;
+  
+      sum += digit1 * digit2;
+    }
+  
+    return sum;
+  }
+  
+  let n1 = 6;
+  let n2 = 34;
+  console.log(sumOfProducts(n1, n2)); 
+  
